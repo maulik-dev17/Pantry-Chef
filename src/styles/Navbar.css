@@ -1,0 +1,254 @@
+/* ========================================
+   PantryChef Navbar
+   ======================================== */
+
+@import "../index.css";
+
+.navbar {
+  width: 100%;
+  height: var(--header-height);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 var(--space-6);
+
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+
+  font-family: var(--font-sans);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* ========================================
+   Logo
+   ======================================== */
+
+.navbar-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+
+  text-decoration: none;
+
+  color: var(--color-primary-600);
+
+  transition: opacity 0.2s ease;
+}
+
+.navbar-logo:hover {
+  opacity: 0.85;
+}
+
+
+/* Logo Image */
+
+.navbar-logo img {
+  width: 60px;
+  height: 60px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+}
+
+
+/* PantryChef Text */
+
+.navbar-logo h1 {
+  margin: 0;
+  color: var(--color-primary-600);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+
+
+/* ========================================
+   Authentication
+   ======================================== */
+
+.navbar-auth {
+  display: flex;
+  align-items: center;
+}
+
+
+.signin-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 36px;
+
+  padding: var(--space-2) 0;
+
+  color: var(--color-primary-500);
+
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+
+  text-decoration: none;
+
+  border-radius: var(--radius-sm);
+
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+.signin-link:hover {
+  color: var(--color-action-hover);
+}
+
+
+.signin-link:focus-visible {
+  outline: 2px solid var(--color-primary-400);
+  outline-offset: 4px;
+}
+
+
+.signin-link:active {
+  color: var(--color-action-active);
+}
+
+.login-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: var(--space-2) 0;
+  color: var(--color-primary-500);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  margin: 0px 20px;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+.login-link:hover {
+  color: var(--color-action-hover);
+}
+
+
+.login-link:focus-visible {
+  outline: 2px solid var(--color-primary-400);
+  outline-offset: 4px;
+}
+
+
+.login-link:active {
+  color: var(--color-action-active);
+}
+
+/* ========================================
+   Tablet
+   ======================================== */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    height: 60px;
+
+    padding: 0 var(--space-4);
+  }
+
+  .navbar-logo {
+    gap: var(--space-2);
+  }
+
+  .navbar-logo img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .navbar-logo h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .signin-link {
+    font-size: var(--font-size-md);
+  }
+  .login-link {
+    font-size: var(--font-size-md);
+  }
+}
+
+
+/* ========================================
+   Mobile
+   ======================================== */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    height: 56px;
+    padding: 0 var(--space-3);
+  }
+
+  .navbar-logo {
+    gap: var(--space-2);
+  }
+
+  .navbar-logo img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .navbar-logo h1 {
+    font-size: var(--font-size-lg);
+    letter-spacing: -0.3px;
+  }
+
+  .signin-link {
+    font-size: var(--font-size-xs);
+    min-height: 32px;
+  }
+  .login-link {
+    font-size: var(--font-size-xs);
+    min-height: 32px;
+  }
+}
+
+
+/* ========================================
+   Small Mobile
+   ======================================== */
+
+@media (max-width: 360px) {
+
+  .navbar {
+    padding: 0 var(--space-2);
+  }
+
+  .navbar-logo img {
+    width: 23px;
+    height: 23px;
+  }
+
+  .navbar-logo h1 {
+    font-size: var(--font-size-md);
+  }
+
+  .signin-link {
+    font-size: 0.7rem;
+  }
+  .login-link {
+    font-size: 0.7rem;
+  }
+}
