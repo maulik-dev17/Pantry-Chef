@@ -16,9 +16,6 @@ function Navbar() {
         <Link to="/signin" className="signin-link">
           Sign In
         </Link>
-        <Link to="/login" className="login-link">
-          Login
-        </Link>
       </div>
 
     </header>

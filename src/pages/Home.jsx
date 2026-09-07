@@ -13,7 +13,7 @@ function Home() {
           <h1 className="home__title">
             What can you cook with what you
             <br />
-            have?
+             have?
           </h1>
 
           <p className="home__description">

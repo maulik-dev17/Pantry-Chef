@@ -20,7 +20,7 @@
   background-repeat: repeat;
   filter: blur(8px);
   transform: scale(1.05);
-  opacity: 0.72;
+  opacity: 0.62;
   z-index: 0;
 }
 
@@ -64,7 +64,7 @@
 
 .home__title {
   margin: 0 0 var(--space-6);
-  color: var(--color-text);
+  color:  #1a5929;;
   font-family: var(--font-sans);
   font-size: var(--font-size-3sxl);
   font-weight: var(--font-weight-bold);
@@ -175,6 +175,10 @@
   .home__description {
     font-size: var(--font-size-sm);
   }
+
+  .home__background {
+        background-size: cover;
+  }
 }
 
 
@@ -214,6 +218,10 @@
 
     padding: 0 var(--space-5);
   }
+
+  .home__background {
+        background-size: cover;
+  }
 }
 
 
@@ -224,5 +232,9 @@
 @media (max-width: 350px) {
   .home__title {
     font-size: var(--font-size-xl);
+  }
+  
+  .home__background {
+        background-size: cover;
   }
 }
