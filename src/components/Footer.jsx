@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logobg from "../assets/logos-bg.png";
+import logobg from "../assets/logos.png";
 import "../styles/Footer.css";
 
 function Footer() {
