@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Home.css";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -13,7 +14,7 @@ function Home() {
           <h1 className="home__title">
             What can you cook with what you
             <br />
-             have?
+            have?
           </h1>
 
           <p className="home__description">
@@ -21,7 +22,7 @@ function Home() {
             cooking experience. We'll find recipes that fit.
           </p>
 
-          <button className="home__button" type="button">
+          <Link to="/auth" className="home__button">
             <svg
               className="home__button-icon"
               viewBox="0 0 24 24"
@@ -68,8 +69,8 @@ function Home() {
               />
             </svg>
 
-            <span>Find a Recipe</span>
-          </button>
+            Find a Recipe
+          </Link>
         </div>
       </section>
     </main>

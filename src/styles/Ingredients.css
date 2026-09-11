@@ -1,0 +1,425 @@
+/* =========================
+   PAGE
+========================= */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8faf9;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+  width: 100%;
+  max-width: 1100px;
+  margin: 150px auto;
+
+  flex: 1;
+
+  padding: 55px 35px 50px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 700;
+
+  color: #00451f;
+
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 15px;
+  color: #38584b;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-container {
+  width: 590px;
+  height: 50px;
+
+  margin: 45px auto 0;
+
+  background: #ffffff;
+  border: 1px solid #d1d8d4;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 15px;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.search-icon {
+  font-size: 25px;
+  color: #65756d;
+
+  margin-right: 10px;
+
+  transform: rotate(-20deg);
+}
+
+.search-container input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  font-size: 14px;
+  color: #34453d;
+
+  background: transparent;
+}
+
+.search-container input::placeholder {
+  color: #64736d;
+}
+
+
+/* =========================
+   SELECTED INGREDIENTS
+========================= */
+
+.selected-section {
+  margin-top: 30px;
+}
+
+.selected-title {
+  font-size: 13px;
+  font-weight: 500;
+
+  color: #183c2c;
+
+  margin-bottom: 10px;
+}
+
+.selected-list {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+.selected-chip {
+  border: 1px solid #cbd6d0;
+
+  background: #e8efeb;
+
+  color: #315142;
+
+  border-radius: 16px;
+
+  padding: 7px 12px;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.selected-chip span {
+  margin-left: 6px;
+  font-size: 14px;
+}
+
+.selected-chip:hover {
+  background: #dce7e1;
+}
+
+
+/* =========================
+   CATEGORY CARDS
+========================= */
+
+.categories {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 14px;
+
+  margin-top: 55px;
+}
+
+.category-card {
+  min-height: 125px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce1df;
+
+  border-radius: 7px;
+
+  padding: 18px 18px;
+}
+
+.category-card h2 {
+  font-size: 16px;
+
+  font-weight: 600;
+
+  color: #005126;
+
+  margin-bottom: 12px;
+}
+
+.ingredient-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+}
+
+.ingredient-btn {
+  border: none;
+
+  background: #e9ebec;
+
+  color: #003f20;
+
+  padding: 7px 10px;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.ingredient-btn:hover {
+  background: #d9e4dd;
+}
+
+.ingredient-btn.active {
+  background: #d7e5dc;
+
+  color: #00451f;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+  width: 100%;
+
+  height: 1px;
+
+  background: #e2e6e4;
+
+  margin-top: 45px;
+}
+
+
+/* =========================
+   CONTINUE
+========================= */
+
+.continue-container {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: 28px;
+}
+
+.continue-btn {
+  width: 105px;
+
+  height: 38px;
+
+  border: none;
+
+  background: #285e2b;
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.continue-btn:hover {
+  background: #1f4d23;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  height: 65px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e5e8e6;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 30px;
+}
+
+.logo {
+  font-size: 32px;
+
+  font-weight: 700;
+
+  color: #00451f;
+}
+
+.nav {
+  display: flex;
+
+  align-items: center;
+
+  gap: 260px;
+}
+
+.nav a {
+  font-size: 13px;
+
+  font-weight: 500;
+
+  color: #003f20;
+
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .main {
+    max-width: 100%;
+
+    padding: 45px 25px;
+  }
+
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav {
+    gap: 40px;
+  }
+
+  .footer-links {
+    margin-left: 0;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .header {
+    height: 60px;
+
+    padding: 0 18px;
+  }
+
+  .logo {
+    font-size: 25px;
+  }
+
+  .nav {
+    gap: 15px;
+  }
+
+  .nav a {
+    font-size: 11px;
+  }
+
+  .main {
+    padding: 40px 18px;
+  }
+
+  .hero h1 {
+    font-size: 29px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .search-container {
+    width: 100%;
+
+    height: 48px;
+
+    margin-top: 35px;
+  }
+
+  .categories {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    margin-top: 40px;
+  }
+
+  .category-card {
+    min-height: 120px;
+
+    padding: 18px;
+  }
+
+  .category-card h2 {
+    font-size: 16px;
+  }
+
+  .ingredient-btn {
+    font-size: 12px;
+
+    padding: 7px 10px;
+  }
+
+  .continue-container {
+    margin-top: 25px;
+  }
+
+}
