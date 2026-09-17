@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Ingredients.css";
+import { Link } from "react-router-dom";
 
 function Ingredients() {
   const [selectedIngredients, setSelectedIngredients] = useState([
@@ -42,7 +43,7 @@ function Ingredients() {
   };
 
   return (
-    
+
     <div className="page">
 
       {/* Main Content */}
@@ -93,11 +94,10 @@ function Ingredients() {
                 {category.items.map((ingredient) => (
                   <button
                     key={ingredient}
-                    className={`ingredient-btn ${
-                      selectedIngredients.includes(ingredient)
+                    className={`ingredient-btn ${selectedIngredients.includes(ingredient)
                         ? "active"
                         : ""
-                    }`}
+                      }`}
                     onClick={() => toggleIngredient(ingredient)}
                   >
                     {ingredient}
@@ -114,9 +114,11 @@ function Ingredients() {
 
         {/* Continue */}
         <div className="continue-container">
-          <button className="continue-btn">
-            Continue
-          </button>
+          <Link to="/CoockingInfo">
+            <button className="continue-btn">
+              Continue
+            </button>
+          </Link>
         </div>
 
       </main>

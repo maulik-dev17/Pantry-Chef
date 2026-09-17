@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { gsap } from "gsap";
-import "../styles/laod.css";
+import "../styles/load.css";
 
 const CONTEXTS = {
   fullscreen: {

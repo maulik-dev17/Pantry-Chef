@@ -1,0 +1,508 @@
+.admin-page {
+  min-height: 100vh;
+  display: flex;
+  background: #f6f7f9;
+  color: #1f2937;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.admin-sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: #111827;
+  color: white;
+  padding: 25px 18px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.admin-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px 35px;
+}
+
+.admin-logo span {
+  font-size: 28px;
+}
+
+.admin-logo h2 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.admin-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px 14px;
+  border-radius: 10px;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: 0.2s ease;
+  font-size: 14px;
+}
+
+.admin-nav-item:hover,
+.admin-nav-item.active {
+  background: #374151;
+  color: white;
+}
+
+.admin-nav-item span {
+  width: 20px;
+  text-align: center;
+}
+
+.admin-sidebar-bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.admin-logout {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+}
+
+.admin-logout:hover {
+  background: #374151;
+  color: white;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.admin-main {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  padding: 35px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.admin-small-title {
+  color: #6b7280;
+  margin: 0 0 5px;
+  font-size: 14px;
+}
+
+.admin-header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+.admin-profile strong,
+.admin-profile span {
+  display: block;
+}
+
+.admin-profile span {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 3px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.admin-stat-card {
+  background: white;
+  border-radius: 15px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  border: 1px solid #e5e7eb;
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+}
+
+.stat-content p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.stat-content h2 {
+  margin: 4px 0;
+  font-size: 25px;
+}
+
+.stat-content span {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.admin-section {
+  margin-bottom: 30px;
+}
+
+.section-heading {
+  margin-bottom: 15px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.section-heading p {
+  margin: 5px 0 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+/* =========================
+   QUICK ACTIONS
+========================= */
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.quick-action {
+  background: white;
+  border: 1px solid #e5e7eb;
+  padding: 20px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: #111827;
+  transition: 0.2s ease;
+}
+
+.quick-action:hover {
+  transform: translateY(-2px);
+  border-color: #9ca3af;
+}
+
+.quick-action > span {
+  font-size: 25px;
+}
+
+.quick-action strong {
+  font-size: 14px;
+}
+
+.quick-action p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+}
+
+.admin-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 15px;
+  padding: 22px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.card-header p {
+  margin: 5px 0 0;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.card-header a {
+  color: #374151;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* =========================
+   RECIPES
+========================= */
+
+.recipe-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.recipe-row:last-child {
+  border-bottom: none;
+}
+
+.recipe-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipe-info {
+  flex: 1;
+}
+
+.recipe-info strong,
+.recipe-info span {
+  display: block;
+}
+
+.recipe-info strong {
+  font-size: 13px;
+}
+
+.recipe-info span {
+  font-size: 11px;
+  color: #6b7280;
+  margin-top: 3px;
+}
+
+.difficulty,
+.status {
+  font-size: 10px;
+  padding: 5px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.difficulty.easy {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.difficulty.medium {
+  background: #fffbeb;
+  color: #b45309;
+}
+
+.status.published {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.status.draft {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+/* =========================
+   INGREDIENTS
+========================= */
+
+.ingredient-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ingredient-number {
+  width: 25px;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.ingredient-name {
+  flex: 1;
+}
+
+.ingredient-name strong {
+  font-size: 13px;
+}
+
+.ingredient-progress {
+  height: 5px;
+  background: #f3f4f6;
+  border-radius: 10px;
+  margin-top: 7px;
+  overflow: hidden;
+}
+
+.ingredient-progress span {
+  display: block;
+  height: 100%;
+  background: #9ca3af;
+  border-radius: 10px;
+}
+
+/* =========================
+   LOADING
+========================= */
+
+.admin-loading {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .admin-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .admin-sidebar {
+    width: 70px;
+    padding: 20px 10px;
+  }
+
+  .admin-logo h2,
+  .admin-nav-item:not(.active)::after,
+  .admin-nav-item {
+    font-size: 0;
+  }
+
+  .admin-nav-item span {
+    font-size: 18px;
+  }
+
+  .admin-logo {
+    justify-content: center;
+  }
+
+  .admin-logo span {
+    font-size: 23px;
+  }
+
+  .admin-main {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+    padding: 20px;
+  }
+
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-header h1 {
+    font-size: 21px;
+  }
+
+  .admin-profile {
+    display: none;
+  }
+
+  .recipe-row {
+    flex-wrap: wrap;
+  }
+}

@@ -5,7 +5,7 @@ function SignupForm({ onSwitch }) {
   const handleSignup = async function (e) {
     e.preventDefault();
 
-    // Your existing signup logic
+    
   };
 
   return (
