@@ -9,9 +9,9 @@ function Home() {
       <div className="home__background" />
 
       {/* Hero */}
-      <section className="home__hero">
+      <section className="home__hero" aria-labelledby="home-title">
         <div className="home__content">
-          <h1 className="home__title">
+          <h1 id="home-title" className="home__title">
             What can you cook with what you
             <br />
             have?
@@ -27,6 +27,7 @@ function Home() {
               className="home__button-icon"
               viewBox="0 0 24 24"
               aria-hidden="true"
+              focusable="false"
             >
               <path
                 d="M14.5 5.5l4 4"
@@ -78,3 +79,4 @@ function Home() {
 }
 
 export default Home;
+

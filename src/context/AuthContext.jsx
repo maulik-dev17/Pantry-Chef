@@ -7,6 +7,7 @@ export function AuthProvider({ children }) {
   const navigate = useNavigate();
 
   const [user, setUser] = useState("");
+  const [loggedIn, SetLoggedIn] = useState(false);
   const [token, setToken] = useState(() => {
     return localStorage.getItem("userToken");
   });
@@ -36,10 +37,13 @@ export function AuthProvider({ children }) {
 
         if (response.ok && result.username) {
           setUser(result);
+          SetLoggedIn(true)
         } else {
+          SetLoggedIn(false)
           logout(false);
         }
       } catch (error) {
+        SetLoggedIn(false)
         console.error("Authentication error:", error);
         logout(false);
       } finally {
@@ -90,12 +94,14 @@ export function AuthProvider({ children }) {
       const userResult = await userResponse.json();
 
       setUser(userResult);
-
+      SetLoggedIn(true);
+      
       return {
         success: true,
         user: userResult,
       };
     } catch (error) {
+      SetLoggedIn(true);
       console.error("Login error:", error);
 
       return {
@@ -124,6 +130,8 @@ export function AuthProvider({ children }) {
     isAuthenticated: !!user,
     login,
     logout,
+    loggedIn,
+    SetLoggedIn
   };
 
   return (

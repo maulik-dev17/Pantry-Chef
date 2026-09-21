@@ -3,7 +3,35 @@ import { useAuth } from "../context/AuthContext";
 import "../styles/Admin.css";
 
 function AdminDashboard() {
-  const { user, logout } = useAuth();
+  const {
+    user,
+    logout,
+    loading,
+  } = useAuth();
+
+  /*
+  ==================================================
+  LOADING
+  ==================================================
+  */
+
+  if (loading) {
+    return (
+      <div className="admin-page">
+        <main className="admin-main">
+          <h2>
+            Loading dashboard...
+          </h2>
+        </main>
+      </div>
+    );
+  }
+
+  /*
+  ==================================================
+  STATS
+  ==================================================
+  */
 
   const stats = [
     {
@@ -31,6 +59,12 @@ function AdminDashboard() {
       description: "Active categories",
     },
   ];
+
+  /*
+  ==================================================
+  RECENT RECIPES
+  ==================================================
+  */
 
   const recentRecipes = [
     {
@@ -70,6 +104,12 @@ function AdminDashboard() {
     },
   ];
 
+  /*
+  ==================================================
+  POPULAR INGREDIENTS
+  ==================================================
+  */
+
   const popularIngredients = [
     {
       name: "Tomato",
@@ -93,6 +133,12 @@ function AdminDashboard() {
     },
   ];
 
+  /*
+  ==================================================
+  DASHBOARD
+  ==================================================
+  */
+
   return (
     <div className="admin-page">
 
@@ -102,7 +148,10 @@ function AdminDashboard() {
 
         <div className="admin-logo">
           <span>🍴</span>
-          <h2>RecipeFinder</h2>
+
+          <h2>
+            PantryChef
+          </h2>
         </div>
 
         <nav className="admin-nav">
@@ -171,7 +220,7 @@ function AdminDashboard() {
 
       </aside>
 
-      {/* MAIN CONTENT */}
+      {/* MAIN */}
 
       <main className="admin-main">
 
@@ -180,30 +229,15 @@ function AdminDashboard() {
         <header className="admin-header">
 
           <div>
+
             <p className="admin-small-title">
               Admin Panel
             </p>
 
             <h1>
-              Welcome back, {user?.username || "Admin"} 👋
+              Welcome back,{" "}
+              {user?.username || "Admin"} 👋
             </h1>
-          </div>
-
-          <div className="admin-profile">
-
-            <div className="admin-avatar">
-              {user?.username?.charAt(0)?.toUpperCase() || "A"}
-            </div>
-
-            <div>
-              <strong>
-                {user?.username || "Admin"}
-              </strong>
-
-              <span>
-                Administrator
-              </span>
-            </div>
 
           </div>
 
@@ -214,6 +248,7 @@ function AdminDashboard() {
         <section className="admin-stats">
 
           {stats.map((stat) => (
+
             <div
               className="admin-stat-card"
               key={stat.title}
@@ -225,9 +260,13 @@ function AdminDashboard() {
 
               <div className="stat-content">
 
-                <p>{stat.title}</p>
+                <p>
+                  {stat.title}
+                </p>
 
-                <h2>{stat.value}</h2>
+                <h2>
+                  {stat.value}
+                </h2>
 
                 <span>
                   {stat.description}
@@ -236,6 +275,7 @@ function AdminDashboard() {
               </div>
 
             </div>
+
           ))}
 
         </section>
@@ -247,11 +287,15 @@ function AdminDashboard() {
           <div className="section-heading">
 
             <div>
-              <h2>Quick Actions</h2>
+
+              <h2>
+                Quick Actions
+              </h2>
 
               <p>
                 Manage your recipe website
               </p>
+
             </div>
 
           </div>
@@ -262,9 +306,11 @@ function AdminDashboard() {
               href="/admin/recipes/add"
               className="quick-action"
             >
+
               <span>➕</span>
 
               <div>
+
                 <strong>
                   Add Recipe
                 </strong>
@@ -272,16 +318,20 @@ function AdminDashboard() {
                 <p>
                   Create a new recipe
                 </p>
+
               </div>
+
             </a>
 
             <a
               href="/admin/ingredients"
               className="quick-action"
             >
+
               <span>🥕</span>
 
               <div>
+
                 <strong>
                   Add Ingredient
                 </strong>
@@ -289,16 +339,20 @@ function AdminDashboard() {
                 <p>
                   Manage available ingredients
                 </p>
+
               </div>
+
             </a>
 
             <a
               href="/admin/categories"
               className="quick-action"
             >
+
               <span>📂</span>
 
               <div>
+
                 <strong>
                   Categories
                 </strong>
@@ -306,7 +360,9 @@ function AdminDashboard() {
                 <p>
                   Manage recipe categories
                 </p>
+
               </div>
+
             </a>
 
           </div>
@@ -324,11 +380,15 @@ function AdminDashboard() {
             <div className="card-header">
 
               <div>
-                <h2>Recent Recipes</h2>
+
+                <h2>
+                  Recent Recipes
+                </h2>
 
                 <p>
                   Recently added recipes
                 </p>
+
               </div>
 
               <a href="/admin/recipes">
@@ -340,6 +400,7 @@ function AdminDashboard() {
             <div className="recipe-table">
 
               {recentRecipes.map((recipe) => (
+
                 <div
                   className="recipe-row"
                   key={recipe.id}
@@ -374,6 +435,7 @@ function AdminDashboard() {
                   </span>
 
                 </div>
+
               ))}
 
             </div>
@@ -387,11 +449,15 @@ function AdminDashboard() {
             <div className="card-header">
 
               <div>
-                <h2>Popular Ingredients</h2>
+
+                <h2>
+                  Popular Ingredients
+                </h2>
 
                 <p>
                   Most searched ingredients
                 </p>
+
               </div>
 
               <a href="/admin/ingredients">
@@ -404,6 +470,7 @@ function AdminDashboard() {
 
               {popularIngredients.map(
                 (ingredient, index) => (
+
                   <div
                     className="ingredient-row"
                     key={ingredient.name}
@@ -414,6 +481,7 @@ function AdminDashboard() {
                     </div>
 
                     <div className="ingredient-name">
+
                       <strong>
                         {ingredient.name}
                       </strong>
@@ -440,6 +508,7 @@ function AdminDashboard() {
                     </strong>
 
                   </div>
+
                 )
               )}
 

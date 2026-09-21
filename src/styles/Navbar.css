@@ -1,254 +1,291 @@
-/* ========================================
-   PantryChef Navbar
-   ======================================== */
-
-@import "../index.css";
+/* =========================================
+   NAVBAR
+========================================= */
 
 .navbar {
   width: 100%;
-  height: var(--header-height);
+  height: 72px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 var(--space-6);
+  padding: 0 40px;
 
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
+  background: #ffffff;
 
-  font-family: var(--font-sans);
+  border-bottom: 1px solid #eeeeee;
+
+  box-sizing: border-box;
 
   position: sticky;
   top: 0;
   z-index: 1000;
-
-  transition:
-    background-color 0.2s ease,
-    box-shadow 0.2s ease;
 }
 
 
-/* ========================================
-   Logo
-   ======================================== */
+/* =========================================
+   LOGO
+========================================= */
 
 .navbar-logo {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: var(--space-2);
+
+  gap: 10px;
 
   text-decoration: none;
 
-  color: var(--color-primary-600);
-
-  transition: opacity 0.2s ease;
+  color: #222222;
 }
-
-.navbar-logo:hover {
-  opacity: 0.85;
-}
-
-
-/* Logo Image */
 
 .navbar-logo img {
-  width: 60px;
-  height: 60px;
+  width: 44px;
+  height: 44px;
 
   object-fit: contain;
 
-  flex-shrink: 0;
+  display: block;
 }
-
-
-/* PantryChef Text */
 
 .navbar-logo h1 {
   margin: 0;
-  color: var(--color-primary-600);
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
-  line-height: 1;
-  letter-spacing: 0.5px;
+
+  font-size: 24px;
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+
+  color: #222222;
 }
 
 
-/* ========================================
-   Authentication
-   ======================================== */
+/* =========================================
+   AUTH AREA
+========================================= */
 
 .navbar-auth {
   display: flex;
   align-items: center;
+
+  height: 100%;
 }
 
+
+/* =========================================
+   SIGN IN
+========================================= */
 
 .signin-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  min-height: 36px;
+  padding: 10px 22px;
 
-  padding: var(--space-2) 0;
-
-  color: var(--color-primary-500);
-
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
+  border-radius: 8px;
 
   text-decoration: none;
 
-  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+
+  color: #ffffff;
+
+  background: #222222;
 
   transition:
-    color 0.2s ease,
-    opacity 0.2s ease;
+    background 0.2s ease,
+    transform 0.2s ease;
 }
-
 
 .signin-link:hover {
-  color: var(--color-action-hover);
+  background: #444444;
+
+  transform: translateY(-1px);
 }
 
 
-.signin-link:focus-visible {
-  outline: 2px solid var(--color-primary-400);
-  outline-offset: 4px;
-}
+/* =========================================
+   USER SECTION
+========================================= */
 
-
-.signin-link:active {
-  color: var(--color-action-active);
-}
-
-.login-link {
-  display: inline-flex;
+.user-section {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 36px;
-  padding: var(--space-2) 0;
-  color: var(--color-primary-500);
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
+
+  gap: 18px;
+}
+
+
+/* =========================================
+   USER PROFILE
+========================================= */
+
+.user-profile {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
   text-decoration: none;
-  border-radius: var(--radius-sm);
-  margin: 0px 20px;
+
+  color: #222222;
+
+  transition: opacity 0.2s ease;
+}
+
+.user-profile:hover {
+  opacity: 0.75;
+}
+
+
+/* =========================================
+   USER AVATAR
+========================================= */
+
+.user-avatar {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  display: block;
+
+  border: 2px solid #eeeeee;
+
+  background: #f5f5f5;
+}
+
+
+/* =========================================
+   USER NAME
+========================================= */
+
+.user-name {
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: #222222;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   LOGOUT BUTTON
+========================================= */
+
+.logout-button {
+  border: none;
+
+  background: transparent;
+
+  padding: 8px 4px;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #777777;
+
   transition:
-    color 0.2s ease,
-    opacity 0.2s ease;
+    color 0.2s ease;
+}
+
+.logout-button:hover {
+  color: #222222;
 }
 
 
-.login-link:hover {
-  color: var(--color-action-hover);
-}
-
-
-.login-link:focus-visible {
-  outline: 2px solid var(--color-primary-400);
-  outline-offset: 4px;
-}
-
-
-.login-link:active {
-  color: var(--color-action-active);
-}
-
-/* ========================================
-   Tablet
-   ======================================== */
+/* =========================================
+   RESPONSIVE
+========================================= */
 
 @media (max-width: 768px) {
 
   .navbar {
-    height: 60px;
+    height: 64px;
 
-    padding: 0 var(--space-4);
+    padding: 0 20px;
   }
 
   .navbar-logo {
-    gap: var(--space-2);
+    gap: 8px;
   }
 
   .navbar-logo img {
-    width: 35px;
-    height: 35px;
+    width: 38px;
+    height: 38px;
   }
 
   .navbar-logo h1 {
-    font-size: var(--font-size-2xl);
+    font-size: 20px;
+  }
+
+  .user-section {
+    gap: 10px;
+  }
+
+  .user-name {
+    font-size: 14px;
+  }
+
+  .user-avatar {
+    width: 38px;
+    height: 38px;
   }
 
   .signin-link {
-    font-size: var(--font-size-md);
+    padding: 8px 16px;
+
+    font-size: 14px;
   }
-  .login-link {
-    font-size: var(--font-size-md);
-  }
+
 }
 
 
-/* ========================================
-   Mobile
-   ======================================== */
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
 @media (max-width: 480px) {
 
   .navbar {
-    height: 56px;
-    padding: 0 var(--space-3);
-  }
-
-  .navbar-logo {
-    gap: var(--space-2);
-  }
-
-  .navbar-logo img {
-    width: 25px;
-    height: 25px;
+    padding: 0 14px;
   }
 
   .navbar-logo h1 {
-    font-size: var(--font-size-lg);
-    letter-spacing: -0.3px;
-  }
-
-  .signin-link {
-    font-size: var(--font-size-xs);
-    min-height: 32px;
-  }
-  .login-link {
-    font-size: var(--font-size-xs);
-    min-height: 32px;
-  }
-}
-
-
-/* ========================================
-   Small Mobile
-   ======================================== */
-
-@media (max-width: 360px) {
-
-  .navbar {
-    padding: 0 var(--space-2);
+    font-size: 18px;
   }
 
   .navbar-logo img {
-    width: 23px;
-    height: 23px;
+    width: 34px;
+    height: 34px;
   }
 
-  .navbar-logo h1 {
-    font-size: var(--font-size-md);
+  .user-name {
+    display: none;
   }
 
-  .signin-link {
-    font-size: 0.7rem;
+  .user-profile {
+    gap: 0;
   }
-  .login-link {
-    font-size: 0.7rem;
+
+  .user-avatar {
+    width: 36px;
+    height: 36px;
   }
+
+  .logout-button {
+    font-size: 13px;
+  }
+
 }

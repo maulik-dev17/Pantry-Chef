@@ -64,7 +64,8 @@
 
 .home__title {
   margin: 0 0 var(--space-6);
-  color:  #1a5929;;
+  color: #1a5929;
+  ;
   font-family: var(--font-sans);
   font-size: var(--font-size-3sxl);
   font-weight: var(--font-weight-bold);
@@ -82,8 +83,9 @@
   margin: 0 auto var(--space-6);
   color: var(--color-text-muted);
   font-family: var(--font-sans);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-regular);
+  line-height: 1.6;
+  font-size: 1.125rem;
+  font-weight: 500;
   line-height: 1.6;
 }
 
@@ -177,7 +179,7 @@
   }
 
   .home__background {
-        background-size: cover;
+    background-size: cover;
   }
 }
 
@@ -220,7 +222,7 @@
   }
 
   .home__background {
-        background-size: cover;
+    background-size: cover;
   }
 }
 
@@ -233,8 +235,8 @@
   .home__title {
     font-size: var(--font-size-xl);
   }
-  
+
   .home__background {
-        background-size: cover;
+    background-size: cover;
   }
 }
