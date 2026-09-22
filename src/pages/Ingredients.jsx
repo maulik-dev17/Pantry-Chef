@@ -3,6 +3,7 @@ import "../styles/Ingredients.css";
 import { Link } from "react-router-dom";
 
 function Ingredients() {
+
   const [selectedIngredients, setSelectedIngredients] = useState([
     "Brown Rice",
     "Garlic",
