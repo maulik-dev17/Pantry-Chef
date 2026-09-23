@@ -1,5 +1,7 @@
 import React from "react";
+
 import "../styles/RecipeFind.css";
+import { Link } from "react-router-dom";
 
 /* ---------- Icons (inline SVG, no external icon library needed) ---------- */
 
@@ -115,10 +117,11 @@ function RecipeCard({ recipe }) {
             <span className="label label--missing">Missing:</span> {missing}
           </p>
         </div>
-
-        <button type="button" className="btn-view-recipe">
-          View Recipe <ArrowRightIcon />
-        </button>
+        <Link to="/RecipePage">
+          <button type="button" className="btn-view-recipe">
+            View Recipe <ArrowRightIcon />
+          </button>
+        </Link>
       </div>
     </article>
   );

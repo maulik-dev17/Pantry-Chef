@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
 import "../styles/Home.css";
 import { Link } from "react-router-dom";
+const isLoggedIn = !!localStorage.getItem("token");
 
 const recipes = [
   {
@@ -123,10 +124,11 @@ function Home() {
           </p>
 
           <div className="home__hero-actions">
-            <Link to={"/Auth"}>
-              <a href="#aesthetic-recipes" className="home__button">
-                Find a Recipe
-              </a>
+            <Link
+              to={isLoggedIn ? "/Ingredients" : "/Auth"}
+              className="home__button"
+            >
+              Find a Recipe
             </Link>
           </div>
         </div>

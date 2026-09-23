@@ -14,8 +14,8 @@ import Ingredients from "./pages/Ingredients";
 import Dashboard from "./pages/Dashboard";
 import CoockingInfo from "./pages/CoockingInfo";
 import RecipeFind from "./pages/RecipeFind";
-import RecipeDetail from "./pages/Recipedetail";
 import Profile from "./pages/Profile";
+import RecipePage from "./pages/RecipePage";
 
 function App() {
   return (
@@ -50,14 +50,15 @@ function App() {
           element={<RecipeFind />}
         />
 
-        <Route
-          path="/recipedetail"
-          element={<RecipeDetail />}
-        />
 
         <Route
           path="/loadcontext"
           element={<LoadContext />}
+        />
+
+        <Route
+          path="/RecipePage"
+          element={<RecipePage />}
         />
 
         <Route
