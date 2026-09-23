@@ -23,22 +23,26 @@ function LoginForm({ onSwitch }) {
     });
   }
 
-  async function handleLogin(e) {
-    e.preventDefault();
+async function handleLogin(e) {
+  e.preventDefault();
 
-    setError("");
-    setLoading(true);
+  setError("");
+  setLoading(true);
 
-    const result = await login(formData);
+  const result = await login(formData);
 
-    setLoading(false);
+  setLoading(false);
 
-    if (result.success) {
-      navigate("/dashboard");
+  if (result.success) {
+    if (result.user.role === "admin") {
+      navigate("/Dashboard");
     } else {
-      setError(result.message);
+      navigate("/Profile");
     }
+  } else {
+    setError(result.message);
   }
+}
 
   return (
     <div className="form-container">

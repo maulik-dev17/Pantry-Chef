@@ -16,6 +16,7 @@ import CoockingInfo from "./pages/CoockingInfo";
 import RecipeFind from "./pages/RecipeFind";
 import Profile from "./pages/Profile";
 import RecipePage from "./pages/RecipePage";
+import ProtectedRouteUser from "./components/ProtectedRouteUser";
 
 function App() {
   return (
@@ -37,13 +38,19 @@ function App() {
             </ProtectedRoute>
           }
         />
+             <Route
+          path="/Profile"
+          element={
+            <ProtectedRouteUser>
+              <Profile />
+            </ProtectedRouteUser>
+          }
+        />
 
         <Route
           path="/CoockingInfo"
           element={<CoockingInfo />}
         />
-        
-        <Route path="/Profile" element={<Profile/>}/>
 
         <Route
           path="/RecipeFind"
