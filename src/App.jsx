@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ForgotPassword from "./components/forgot-password";
+import ProtectedRouteUser from "./components/ProtectedRouteUser";
 
 import LoadContext from "./context/loadcontext";
 
@@ -16,7 +17,7 @@ import CoockingInfo from "./pages/CoockingInfo";
 import RecipeFind from "./pages/RecipeFind";
 import Profile from "./pages/Profile";
 import RecipePage from "./pages/RecipePage";
-import ProtectedRouteUser from "./components/ProtectedRouteUser";
+import Recipe from "./pages/Recipe";
 
 function App() {
   return (
@@ -69,10 +70,16 @@ function App() {
         />
 
         <Route
+        path="/Recipe"
+        element={<Recipe/>}
+        />
+
+        <Route
           path="/forgot-password"
           element={<ForgotPassword />}
         />
       </Routes>
+
 
       <Footer />
     </>
