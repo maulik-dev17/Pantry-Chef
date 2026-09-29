@@ -1,0 +1,511 @@
+/* NotFound.css */
+
+.not-found {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: var(--space-8);
+
+  background: var(--color-background);
+  color: var(--color-text);
+
+  font-family: var(--font-sans);
+}
+
+/* ----------------------------------------
+   Background
+---------------------------------------- */
+
+.not-found__grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      to right,
+      rgb(45 90 39 / 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgb(45 90 39 / 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 42px 42px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 25%,
+    black 75%,
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+.not-found__glow {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: var(--color-primary-100);
+
+  filter: blur(80px);
+
+  opacity: 0.55;
+
+  animation: glowPulse 5s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+
+/* ----------------------------------------
+   Content
+---------------------------------------- */
+
+.not-found__content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 720px;
+
+  text-align: center;
+}
+
+
+/* ----------------------------------------
+   Badge
+---------------------------------------- */
+
+.not-found__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+
+  padding: 7px 12px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+
+  background: rgb(255 255 255 / 0.75);
+
+  color: var(--color-text-muted);
+
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+
+  letter-spacing: 0.08em;
+
+  box-shadow: var(--shadow-sm);
+
+  animation: fadeUp 0.7s ease both;
+}
+
+.not-found__dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--color-action);
+
+  box-shadow: 0 0 0 4px var(--color-primary-100);
+
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+
+/* ----------------------------------------
+   404
+---------------------------------------- */
+
+.not-found__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(12px, 2vw, 28px);
+
+  margin-top: var(--space-8);
+
+  color: var(--color-primary-500);
+
+  font-size: clamp(7rem, 20vw, 13rem);
+  font-weight: var(--font-weight-bold);
+
+  line-height: 0.8;
+
+  letter-spacing: -0.08em;
+
+  animation: fadeUp 0.8s 0.1s ease both;
+}
+
+.not-found__number > span {
+  display: inline-block;
+
+  animation: numberFloat 4s ease-in-out infinite;
+}
+
+.not-found__number > span:last-child {
+  animation-delay: -1.5s;
+}
+
+
+/* ----------------------------------------
+   Plate
+---------------------------------------- */
+
+.not-found__plate {
+  width: clamp(105px, 15vw, 160px);
+  height: clamp(105px, 15vw, 160px);
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--color-surface);
+
+  border: 2px solid var(--color-border);
+
+  box-shadow:
+    var(--shadow-lg),
+    inset 0 0 0 10px var(--color-neutral-50);
+
+  animation: plateFloat 4s ease-in-out infinite;
+}
+
+.not-found__plate-inner {
+  width: 58%;
+  height: 58%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 2px dashed var(--color-primary-300);
+
+  background: var(--color-primary-50);
+}
+
+.not-found__leaf {
+  display: block;
+
+  color: var(--color-primary-500);
+
+  font-size: 2rem;
+
+  animation: rotateLeaf 6s linear infinite;
+}
+
+
+/* ----------------------------------------
+   Text
+---------------------------------------- */
+
+.not-found__text {
+  margin-top: var(--space-8);
+
+  animation: fadeUp 0.8s 0.2s ease both;
+}
+
+.not-found__text h1 {
+  color: var(--color-text);
+
+  font-size: clamp(
+    var(--font-size-xl),
+    4vw,
+    var(--font-size-3xl)
+  );
+
+  font-weight: var(--font-weight-bold);
+
+  letter-spacing: -0.025em;
+}
+
+.not-found__text p {
+  max-width: 500px;
+
+  margin: var(--space-3) auto 0;
+
+  color: var(--color-text-muted);
+
+  font-size: var(--font-size-md);
+
+  line-height: 1.7;
+}
+
+
+/* ----------------------------------------
+   Button
+---------------------------------------- */
+
+.not-found__button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+
+  margin-top: var(--space-8);
+
+  padding: 12px 20px;
+
+  border-radius: var(--radius-md);
+
+  background: var(--color-action);
+  color: var(--color-text-inverse);
+
+  text-decoration: none;
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+
+  box-shadow: var(--shadow-md);
+
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+
+  animation: fadeUp 0.8s 0.3s ease both;
+}
+
+.not-found__button span {
+  transition: transform 180ms ease;
+}
+
+.not-found__button:hover {
+  background: var(--color-action-hover);
+
+  transform: translateY(-2px);
+
+  box-shadow: var(--shadow-lg);
+}
+
+.not-found__button:hover span {
+  transform: translateX(-4px);
+}
+
+.not-found__button:active {
+  background: var(--color-action-active);
+
+  transform: translateY(0);
+}
+
+
+/* ----------------------------------------
+   Floating ingredients
+---------------------------------------- */
+
+.not-found__ingredients {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.ingredient {
+  position: absolute;
+
+  color: var(--color-primary-400);
+
+  opacity: 0.55;
+}
+
+.ingredient--one {
+  top: 20%;
+  left: 14%;
+
+  font-size: 18px;
+
+  animation: ingredientFloat 5s ease-in-out infinite;
+}
+
+.ingredient--two {
+  top: 31%;
+  right: 15%;
+
+  font-size: 24px;
+
+  animation: ingredientFloat 6s 1s ease-in-out infinite;
+}
+
+.ingredient--three {
+  bottom: 23%;
+  left: 19%;
+
+  font-size: 20px;
+
+  animation: ingredientFloat 7s 0.5s ease-in-out infinite;
+}
+
+.ingredient--four {
+  right: 20%;
+  bottom: 18%;
+
+  font-size: 14px;
+
+  animation: ingredientFloat 5s 1.5s ease-in-out infinite;
+}
+
+
+/* ----------------------------------------
+   Animations
+---------------------------------------- */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes plateFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+@keyframes numberFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes ingredientFloat {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(8px, -15px) rotate(15deg);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    transform: scale(0.9);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.65;
+  }
+}
+
+@keyframes dotPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px var(--color-primary-100);
+  }
+
+  50% {
+    box-shadow: 0 0 0 7px var(--color-primary-100);
+  }
+}
+
+@keyframes rotateLeaf {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ----------------------------------------
+   Responsive
+---------------------------------------- */
+
+@media (max-width: 600px) {
+  .not-found {
+    padding: var(--space-6);
+  }
+
+  .not-found__number {
+    gap: 8px;
+
+    font-size: clamp(5.5rem, 28vw, 9rem);
+  }
+
+  .not-found__plate {
+    width: 90px;
+    height: 90px;
+  }
+
+  .not-found__text {
+    margin-top: var(--space-6);
+  }
+
+  .not-found__text p {
+    font-size: var(--font-size-sm);
+  }
+
+  .ingredient--one {
+    left: 7%;
+  }
+
+  .ingredient--two {
+    right: 7%;
+  }
+
+  .ingredient--three {
+    left: 8%;
+  }
+
+  .ingredient--four {
+    right: 8%;
+  }
+}
+
+
+/* ----------------------------------------
+   Accessibility
+---------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    scroll-behavior: auto !important;
+  }
+}

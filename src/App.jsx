@@ -18,6 +18,7 @@ import RecipeFind from "./pages/RecipeFind";
 import Profile from "./pages/Profile";
 import RecipePage from "./pages/RecipePage";
 import Recipe from "./pages/Recipe";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -72,6 +73,11 @@ function App() {
         <Route
         path="/Recipe"
         element={<Recipe/>}
+        />
+
+        <Route
+        path="/Not Found"
+        element={<NotFound/>}
         />
 
         <Route
